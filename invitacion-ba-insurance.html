@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miércoles Financiero — BA Insurance</title>
+<style>
+:root{
+  --ink:#0f1e19;
+  --panel:#15281f;
+  --panel-2:#1b3226;
+  --brass:#c49a3a;
+  --brass-light:#e8c877;
+  --linen:#f4ecdd;
+  --sage:#9fb8a3;
+  --line:rgba(196,154,58,.26);
+  --shadow:0 30px 80px rgba(0,0,0,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--ink);
+  color:var(--linen);
+  font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  display:flex;
+  justify-content:center;
+  padding:clamp(24px,6vw,64px) 18px;
+  position:relative;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(196,154,58,.10), transparent 32%),
+    radial-gradient(circle at 84% 92%, rgba(196,154,58,.08), transparent 36%);
+  pointer-events:none;
+}
+
+.rings{
+  position:absolute;
+  left:50%;
+  bottom:-6%;
+  transform:translateX(-50%);
+  width:min(900px,150%);
+  height:auto;
+  opacity:.5;
+  pointer-events:none;
+}
+
+.card{
+  position:relative;
+  z-index:1;
+  width:min(560px,100%);
+  background:linear-gradient(180deg,var(--panel),var(--panel-2) 88%);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  padding:clamp(30px,5vw,52px) clamp(26px,5.5vw,50px) 40px;
+}
+
+.mark{
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  gap:.4em;
+  font-family:"Fraunces",Georgia,serif;
+}
+.mark b{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:.02em;
+  color:var(--brass-light);
+}
+.mark span{
+  font-family:"Public Sans",sans-serif;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--sage);
+}
+
+.rule{
+  height:1px;
+  margin:16px auto 0;
+  width:64px;
+  background:linear-gradient(90deg,transparent,var(--brass),transparent);
+}
+
+.eyebrow{
+  margin:26px 0 0;
+  text-align:center;
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--brass);
+}
+
+h1{
+  text-align:center;
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:600;
+  font-style:italic;
+  font-size:clamp(30px,6vw,42px);
+  line-height:1.14;
+  letter-spacing:-.01em;
+  margin:12px 0 0;
+  text-wrap:balance;
+  color:var(--linen);
+}
+h1 em{
+  font-style:normal;
+  color:var(--brass-light);
+}
+
+.lede{
+  text-align:center;
+  max-width:40ch;
+  margin:16px auto 0;
+  color:var(--sage);
+  font-size:15.5px;
+  line-height:1.6;
+}
+
+.pillars{
+  list-style:none;
+  margin:34px 0 0;
+  padding:22px 0 4px;
+  border-top:1px solid var(--line);
+  display:grid;
+  gap:20px;
+}
+.pillars li{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:14px;
+  align-items:start;
+}
+.pillars .num{
+  font-family:"Space Mono",monospace;
+  font-size:13px;
+  color:var(--brass);
+  border:1px solid var(--line);
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.pillars h3{
+  margin:2px 0 4px;
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:600;
+  font-size:17.5px;
+  color:var(--linen);
+}
+.pillars p{
+  margin:0;
+  color:var(--sage);
+  font-size:14px;
+  line-height:1.55;
+  max-width:42ch;
+}
+
+.details{
+  margin:32px 0 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:22px 0;
+  display:grid;
+  gap:16px;
+}
+.details .row{
+  display:grid;
+  grid-template-columns:84px 1fr;
+  gap:14px;
+  align-items:baseline;
+}
+.details .label{
+  font-family:"Space Mono",monospace;
+  font-size:10.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--brass);
+}
+.details .value{
+  font-size:15px;
+  line-height:1.5;
+  color:var(--linen);
+}
+.details .value small{
+  display:block;
+  color:var(--sage);
+  font-size:12.5px;
+  margin-top:2px;
+}
+.details a{
+  color:var(--brass-light);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+}
+.details a:hover,.details a:focus-visible{border-color:var(--brass-light)}
+
+.cta{
+  margin:26px 0 0;
+  text-align:center;
+}
+.cta a{
+  display:inline-block;
+  font-family:"Space Mono",monospace;
+  font-size:12.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink);
+  background:linear-gradient(180deg,var(--brass-light),var(--brass));
+  padding:13px 26px;
+  text-decoration:none;
+}
+.cta a:focus-visible{outline:2px solid var(--linen);outline-offset:3px}
+.cta p{
+  margin:12px 0 0;
+  font-size:12px;
+  color:var(--sage);
+  letter-spacing:.02em;
+}
+
+footer{
+  margin-top:28px;
+  text-align:center;
+}
+footer .tag{
+  font-family:"Fraunces",Georgia,serif;
+  font-style:italic;
+  font-size:13px;
+  color:var(--sage);
+}
+footer .brand{
+  margin-top:8px;
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--brass);
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .card{animation:rise .5s ease-out both}
+}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;0,700;1,500;1,600&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+</head>
+<body>
+
+<svg class="rings" viewBox="0 0 900 420" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+  <circle cx="450" cy="420" r="120" fill="none" stroke="#c49a3a" stroke-width="1"/>
+  <circle cx="450" cy="420" r="200" fill="none" stroke="#c49a3a" stroke-width="1"/>
+  <circle cx="450" cy="420" r="280" fill="none" stroke="#c49a3a" stroke-width="1"/>
+  <circle cx="450" cy="420" r="360" fill="none" stroke="#c49a3a" stroke-width=".7"/>
+  <path d="M450,420 C 420,360 360,340 300,300" fill="none" stroke="#c49a3a" stroke-width="1"/>
+  <path d="M450,420 C 480,360 540,340 600,300" fill="none" stroke="#c49a3a" stroke-width="1"/>
+  <path d="M450,420 C 430,330 400,300 340,260" fill="none" stroke="#c49a3a" stroke-width=".7"/>
+  <path d="M450,420 C 470,330 500,300 560,260" fill="none" stroke="#c49a3a" stroke-width=".7"/>
+</svg>
+
+<main class="card">
+  <div class="mark"><b>BA</b><span>Insurance</span></div>
+  <div class="rule"></div>
+
+  <p class="eyebrow">Evento semanal de los miércoles</p>
+  <h1>Lo que siembre hoy,<br>lo cosecha <em>su familia</em>.</h1>
+  <p class="lede">Una noche de servicios financieros para aprender a ahorrar con propósito, proteger lo que ha construido, y asegurar la universidad de sus hijos.</p>
+
+  <ul class="pillars">
+    <li>
+      <span class="num">I</span>
+      <div>
+        <h3>Ahorrar con propósito</h3>
+        <p>Estrategias sencillas para ahorrar más cada mes, sin cambiar su estilo de vida.</p>
+      </div>
+    </li>
+    <li>
+      <span class="num">II</span>
+      <div>
+        <h3>Proteger su patrimonio</h3>
+        <p>Cómo blindar lo que ha construido ante lo inesperado.</p>
+      </div>
+    </li>
+    <li>
+      <span class="num">III</span>
+      <div>
+        <h3>La universidad de sus hijos</h3>
+        <p>Un plan claro para que el costo de estudiar no sea un obstáculo.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="details">
+    <div class="row">
+      <span class="label">Fecha</span>
+      <span class="value">Miércoles, 9 de septiembre</span>
+    </div>
+    <div class="row">
+      <span class="label">Hora</span>
+      <span class="value">7:00 PM</span>
+    </div>
+    <div class="row">
+      <span class="label">Lugar</span>
+      <span class="value">BA Insurance<small>20832 Roscoe Blvd #103, Winnetka, CA 91306</small></span>
+    </div>
+    <div class="row">
+      <span class="label">RSVP</span>
+      <span class="value"><a href="tel:+18182667038">(818) 266-7038</a><small>Llamada o WhatsApp — cupo limitado</small></span>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="tel:+18182667038">Confirmar asistencia</a>
+    <p>Invite a quien más lo necesite.</p>
+  </div>
+
+  <footer>
+    <p class="tag">Protegiendo familias, construyendo futuro.</p>
+    <p class="brand">BA Insurance</p>
+  </footer>
+</main>
+</body>
+</html>
