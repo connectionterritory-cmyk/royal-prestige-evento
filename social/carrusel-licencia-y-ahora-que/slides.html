@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=block" rel="stylesheet">
 <style>
 :root{
-  --navy:#0a1730;--navy2:#132a52;--gold:#d5b875;--gold2:#f0dcaa;--goldInk:#7a5c1e;
+  --navy:#021a42;--navy2:#0c2b5e;--gold:#d8ad52;--gold2:#f2d999;--goldInk:#7a5c1e;
   --ivory:#f7f3ea;--white:#ffffff;--muted:#a9b4c8;--ink:#0a1730;--inkMuted:#4b5568;
   --serif:"Playfair Display",Georgia,serif;--sans:Inter,system-ui,sans-serif;
   --sx:96px;--top:150px;--bottom:170px;
@@ -15,17 +15,19 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px 0}
 .slide{width:1080px;height:1350px;position:relative;overflow:hidden;color:var(--white);
-  background:radial-gradient(ellipse 80% 55% at 85% 0%,rgba(213,184,117,.13),transparent 60%),
+  background:radial-gradient(ellipse 80% 55% at 85% 0%,rgba(216,173,82,.13),transparent 60%),
              linear-gradient(170deg,var(--navy2) 0%,var(--navy) 55%,#070f22 100%)}
-.slide.light{color:var(--ink);background:radial-gradient(ellipse 80% 55% at 85% 0%,rgba(213,184,117,.22),transparent 60%),var(--ivory)}
+.slide.light{color:var(--ink);background:radial-gradient(ellipse 80% 55% at 85% 0%,rgba(216,173,82,.22),transparent 60%),var(--ivory)}
 
 /* marco común */
 .frame{position:absolute;inset:0;pointer-events:none}
-.frame::before{content:"";position:absolute;inset:36px;border:1.5px solid rgba(213,184,117,.28);border-radius:4px}
+.frame::before{content:"";position:absolute;inset:36px;border:1.5px solid rgba(216,173,82,.28);border-radius:4px}
 .light .frame::before{border-color:rgba(122,92,30,.22)}
 .hdr{position:absolute;top:70px;left:var(--sx);right:var(--sx);display:flex;justify-content:space-between;align-items:center;
   font:700 20px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 .light .hdr{color:var(--goldInk)}
+.hdr .mark{display:flex;align-items:center;gap:16px}
+.hdr .mark img{height:46px;width:auto;display:block}
 .hdr .num{font-family:var(--serif);letter-spacing:.06em;font-size:24px}
 .hdr .num span{opacity:.5}
 .ftr{position:absolute;bottom:72px;left:var(--sx);right:var(--sx);display:flex;justify-content:space-between;align-items:center;
@@ -64,13 +66,13 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 /* 02 */
 .list{display:flex;flex-direction:column;gap:26px}
 .row{display:flex;align-items:center;gap:28px;font:600 42px/1.2 var(--sans)}
-.ico{width:76px;height:76px;flex:none;border-radius:50%;border:2px solid rgba(213,184,117,.55);display:grid;place-items:center;background:rgba(213,184,117,.08)}
+.ico{width:76px;height:76px;flex:none;border-radius:50%;border:2px solid rgba(216,173,82,.55);display:grid;place-items:center;background:rgba(216,173,82,.08)}
 .ico svg{width:38px;height:38px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .callout{border-left:6px solid var(--gold);padding:8px 0 8px 36px}
 
 /* 03 */
 .chips{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.chip{border:2px solid rgba(213,184,117,.45);border-radius:14px;padding:24px 28px;font:700 38px/1 var(--sans);background:rgba(255,255,255,.03)}
+.chip{border:2px solid rgba(216,173,82,.45);border-radius:14px;padding:24px 28px;font:700 38px/1 var(--sans);background:rgba(255,255,255,.03)}
 .chip small{display:block;font:700 18px/1 var(--sans);letter-spacing:.2em;color:var(--gold);margin-bottom:12px}
 .ask{font:900 92px/1 var(--serif);color:var(--gold);letter-spacing:-.01em}
 
@@ -84,7 +86,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 
 /* 05 */
 .route{position:relative;display:flex;flex-direction:column;gap:20px;padding-left:4px}
-.route::before{content:"";position:absolute;left:31px;top:26px;bottom:26px;width:2px;background:linear-gradient(var(--gold),rgba(213,184,117,.25))}
+.route::before{content:"";position:absolute;left:31px;top:26px;bottom:26px;width:2px;background:linear-gradient(var(--gold),rgba(216,173,82,.25))}
 .step{display:flex;align-items:center;gap:30px;font:600 36px/1.15 var(--sans);position:relative}
 .step b{width:56px;height:56px;flex:none;border-radius:50%;background:var(--navy);border:2px solid var(--gold);color:var(--gold);
   display:grid;place-items:center;font:700 23px/1 var(--serif)}
@@ -107,7 +109,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 .old{display:flex;justify-content:space-between;align-items:center;white-space:nowrap;font:700 25px/1 var(--sans);letter-spacing:.04em;color:#8792a8;border:2px dashed #46526d;padding:22px 26px;border-radius:12px}
 .old em{font-style:normal;color:#56627c}
 .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 22px}
-.g{border-radius:16px;padding:24px 20px;background:linear-gradient(160deg,rgba(213,184,117,.2),rgba(213,184,117,.05));border:2px solid rgba(213,184,117,.6);position:relative}
+.g{border-radius:16px;padding:24px 20px;background:linear-gradient(160deg,rgba(216,173,82,.2),rgba(216,173,82,.05));border:2px solid rgba(216,173,82,.6);position:relative}
 .g small{display:block;font:700 22px/1 var(--serif);color:var(--gold);margin-bottom:14px}
 .g span{font:800 28px/1 var(--sans);letter-spacing:.03em}
 .g:not(:nth-child(3n))::after{content:"→";position:absolute;right:-21px;top:50%;transform:translate(50%,-50%);font:700 26px/1 var(--sans);color:var(--gold);z-index:2}
@@ -122,12 +124,12 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 /* 10 */
 .s10 .top{font:800 40px/1.2 var(--sans);letter-spacing:.04em;color:var(--muted)}
 .s10 .big{font:900 82px/1.02 var(--serif);color:var(--white)}
-.cta{border:2px solid rgba(213,184,117,.55);border-radius:18px;padding:36px 40px;background:rgba(213,184,117,.07)}
+.cta{border:2px solid rgba(216,173,82,.55);border-radius:18px;padding:36px 40px;background:rgba(216,173,82,.07)}
 .cta .who{font:600 26px/1.35 var(--sans);color:var(--muted)}
 .cta .q{font:700 38px/1.28 var(--sans);color:var(--white)}
 .cta .read{font:italic 700 34px/1 var(--serif);color:var(--gold)}
 .sig{display:flex;align-items:center;gap:20px}
-.sig .mono{width:64px;height:64px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font:800 24px/1 var(--serif);color:var(--gold)}
+.sig img{height:96px;width:auto;display:block}
 .sig .n{font:700 28px/1.2 var(--serif)}
 .sig .o{font:600 19px/1.2 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 </style>
@@ -137,7 +139,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 01 HOOK -->
 <section class="slide s1" id="s01">
   <div class="frame"></div>
-  <div class="hdr"><span>Caicedo Network</span><span class="num">01<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">Caicedo Network</span><span class="num">01<span> / 10</span></span></div>
   <div class="content">
     <div class="rule"></div>
     <p class="pre mt40">Sacaste tu licencia<br>de seguros…</p>
@@ -150,7 +152,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 02 LA PROMESA -->
 <section class="slide s2" id="s02">
   <div class="frame"></div>
-  <div class="hdr"><span>La promesa</span><span class="num">02<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">La promesa</span><span class="num">02<span> / 10</span></span></div>
   <div class="content">
     <p class="h2">Te hablaron de:</p>
     <div class="list mt40">
@@ -168,7 +170,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 03 LOS PRIMEROS DÍAS -->
 <section class="slide s3" id="s03">
   <div class="frame"></div>
-  <div class="hdr"><span>Los primeros días</span><span class="num">03<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">Los primeros días</span><span class="num">03<span> / 10</span></span></div>
   <div class="content">
     <p class="h2">Empiezas con tu<br><span class="gold">mercado natural.</span></p>
     <div class="chips mt40">
@@ -186,7 +188,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 04 EL VERDADERO PROBLEMA -->
 <section class="slide light s4" id="s04">
   <div class="frame"></div>
-  <div class="hdr"><span>El verdadero problema</span><span class="num">04<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">El verdadero problema</span><span class="num">04<span> / 10</span></span></div>
   <div class="content">
     <p class="h2">El problema no siempre<br>es el producto.<br>Ni siquiera es la licencia.</p>
     <div class="highlight mt56">
@@ -202,7 +204,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 05 LO QUE UN AGENTE NUEVO NECESITA -->
 <section class="slide s5" id="s05">
   <div class="frame"></div>
-  <div class="hdr"><span>La ruta</span><span class="num">05<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">La ruta</span><span class="num">05<span> / 10</span></span></div>
   <div class="content">
     <p class="h2">Un agente nuevo necesita aprender:</p>
     <div class="route mt40">
@@ -223,7 +225,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 06 ENTRENAR NO ES ACOMPAÑAR -->
 <section class="slide light s6" id="s06">
   <div class="frame"></div>
-  <div class="hdr"><span>Entrenar ≠ acompañar</span><span class="num">06<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">Entrenar ≠ acompañar</span><span class="num">06<span> / 10</span></span></div>
   <div class="content">
     <p class="h2">Ver videos de entrenamiento no es lo mismo que tener <span class="gold">acompañamiento.</span></p>
     <div class="cuando mt40">
@@ -240,7 +242,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 07 FRUSTRACIÓN -->
 <section class="slide s7" id="s07">
   <div class="frame"></div>
-  <div class="hdr"><span>La frustración</span><span class="num">07<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">La frustración</span><span class="num">07<span> / 10</span></span></div>
   <div class="content">
     <p class="h2">Y entonces empieza<br>la frustración.</p>
     <div class="quotes mt40">
@@ -258,7 +260,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 08 CAMBIO DE PERSPECTIVA -->
 <section class="slide s8" id="s08">
   <div class="frame"></div>
-  <div class="hdr"><span>Otra perspectiva</span><span class="num">08<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">Otra perspectiva</span><span class="num">08<span> / 10</span></span></div>
   <div class="content">
     <p class="h1">¿Y si construimos <span class="gold">diferente?</span></p>
     <p class="downnote mt56">En lugar de solamente:</p>
@@ -279,7 +281,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 09 LA VISIÓN -->
 <section class="slide light s9" id="s09">
   <div class="frame"></div>
-  <div class="hdr"><span>La visión</span><span class="num">09<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">La visión</span><span class="num">09<span> / 10</span></span></div>
   <div class="content">
     <p class="h2">No quiero construir solamente una organización con muchos agentes.</p>
     <div class="rule mt56"></div>
@@ -298,7 +300,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
 <!-- 10 CTA -->
 <section class="slide s10" id="s10">
   <div class="frame"></div>
-  <div class="hdr"><span>Conversemos</span><span class="num">10<span> / 10</span></span></div>
+  <div class="hdr"><span class="mark"><img src="assets/caicedo-shield.png" alt="">Conversemos</span><span class="num">10<span> / 10</span></span></div>
   <div class="content">
     <p class="top">LA INDUSTRIA NO NECESITA SOLAMENTE MÁS AGENTES.</p>
     <p class="big mt24">Necesita mejores <span class="gold">sistemas</span> para desarrollarlos.</p>
@@ -307,7 +309,7 @@ body{background:#222;font-family:var(--sans);display:flex;flex-direction:column;
       <p class="q mt16">¿Qué fue —o qué sería— lo más difícil para ti después de obtener tu licencia?</p>
       <p class="read mt24">Te leo en los comentarios.</p>
     </div>
-    <div class="sig mt56"><span class="mono">MC</span><div><p class="n">Moisés Caicedo</p><p class="o mt8">Caicedo Network · IZZY</p></div></div>
+    <div class="sig mt56"><img src="assets/caicedo-shield.png" alt="Caicedo Network"><div><p class="n">Moisés Caicedo</p><p class="o mt8">Caicedo Network · IZZY</p></div></div>
   </div>
   <div class="ftr"><div class="dots"><i></i><i></i><i></i><i></i><i class="on"></i></div><span></span></div>
 </section>
