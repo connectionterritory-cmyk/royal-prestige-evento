@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Plantilla — Caicedo Network</title>
+<link rel="stylesheet" href="../_marca/marca.css">
+</head>
+<body>
+<!--
+  PLANTILLA DE CARRUSEL — copia esta carpeta, cambia los textos y ejecuta:
+    node social/render.mjs social/carrusel-<nombre> [--pdf]
+  Reglas: una idea por lámina · fondo .light para alternar ritmo · actualizar "NN / total" y los .dots
+  Para historias 9:16 agrega la clase "story" a cada .slide.
+-->
+
+<!-- TIPO A · PORTADA / GANCHO -->
+<section class="slide s1" id="p01">
+  <div class="frame"></div>
+  <div class="hdr"><span class="mark"><img src="../_marca/assets/caicedo-shield.png" alt="">Caicedo Network</span><span class="num">01<span> / 05</span></span></div>
+  <div class="content">
+    <div class="rule"></div>
+    <p class="pre mt40">Frase de entrada<br>en dos líneas…</p>
+    <p class="big mt40">Pregunta<br>gancho</p>
+    <p class="sub mt56">Subtítulo corto que explica de qué trata el carrusel.</p>
+  </div>
+  <div class="ftr"><div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div><span class="swipe">Desliza <b>→</b></span></div>
+</section>
+
+<!-- TIPO B · RUTA / LISTA NUMERADA (máx. 8 pasos) -->
+<section class="slide" id="p02">
+  <div class="frame"></div>
+  <div class="hdr"><span class="mark"><img src="../_marca/assets/caicedo-shield.png" alt="">Sección</span><span class="num">02<span> / 05</span></span></div>
+  <div class="content">
+    <p class="h2">Título de la lista:</p>
+    <div class="route mt40">
+      <div class="step"><b>1</b>Primer paso</div>
+      <div class="step"><b>2</b>Segundo paso</div>
+      <div class="step"><b>3</b>Tercer paso</div>
+      <div class="step"><b>4</b>Cuarto paso</div>
+    </div>
+    <div class="close mt56"><span class="a">Frase de cierre.</span><span class="b">Remate.</span></div>
+  </div>
+  <div class="ftr"><div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i></div><span class="swipe">Desliza <b>→</b></span></div>
+</section>
+
+<!-- TIPO C · IDEA DESTACADA (fondo claro) -->
+<section class="slide light" id="p03">
+  <div class="frame"></div>
+  <div class="hdr"><span class="mark"><img src="../_marca/assets/caicedo-shield.png" alt="">Sección</span><span class="num">03<span> / 05</span></span></div>
+  <div class="content">
+    <p class="h2">Planteamiento del problema<br>en dos o tres líneas.</p>
+    <div class="highlight mt56">
+      <p class="kicker">Antetítulo</p>
+      <p class="h1 mt16">La idea <span class="gold">CLAVE.</span></p>
+    </div>
+    <p class="body mt56">Texto de apoyo breve, una o dos líneas como máximo.</p>
+  </div>
+  <div class="ftr"><div class="dots"><i></i><i></i><i class="on"></i><i></i><i></i></div><span class="swipe">Desliza <b>→</b></span></div>
+</section>
+
+<!-- TIPO D · CITAS / VOCES + REMATE DORADO -->
+<section class="slide" id="p04">
+  <div class="frame"></div>
+  <div class="hdr"><span class="mark"><img src="../_marca/assets/caicedo-shield.png" alt="">Sección</span><span class="num">04<span> / 05</span></span></div>
+  <div class="content">
+    <p class="h2">Título de la lámina.</p>
+    <div class="quotes mt40">
+      <p>“Primera frase.”</p>
+      <p>“Segunda frase.”</p>
+      <p>“Tercera frase.”</p>
+    </div>
+    <div class="goldbox mt40"><p>Remate en una o<br>dos líneas.</p></div>
+  </div>
+  <div class="ftr"><div class="dots"><i></i><i></i><i></i><i class="on"></i><i></i></div><span class="swipe">Desliza <b>→</b></span></div>
+</section>
+
+<!-- TIPO E · CIERRE CON PREGUNTA Y FIRMA -->
+<section class="slide s10" id="p05">
+  <div class="frame"></div>
+  <div class="hdr"><span class="mark"><img src="../_marca/assets/caicedo-shield.png" alt="">Conversemos</span><span class="num">05<span> / 05</span></span></div>
+  <div class="content">
+    <p class="top">FRASE DE CONTEXTO EN MAYÚSCULAS.</p>
+    <p class="big mt24">Mensaje final con una palabra <span class="gold">clave.</span></p>
+    <div class="cta mt56">
+      <p class="who">A quién le hablas:</p>
+      <p class="q mt16">¿Pregunta abierta para provocar comentarios?</p>
+      <p class="read mt24">Te leo en los comentarios.</p>
+    </div>
+    <div class="sig mt56"><div class="logos"><img src="../_marca/assets/caicedo-shield.png" alt="Caicedo Network"><span class="sep"></span><img src="../_marca/assets/izzy-shield.png" alt="IZZY" style="height:72px"></div><span class="sep"></span><div><p class="n">Moisés Caicedo</p><p class="o mt8">Caicedo Network · IZZY</p></div></div>
+  </div>
+  <div class="ftr"><div class="dots"><i></i><i></i><i></i><i></i><i class="on"></i></div><span></span></div>
+</section>
+</body>
+</html>
