@@ -14,10 +14,13 @@ const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&
 // "[...]" marca las cifras que van en dorado
 const markup = t => esc(t).replace(/\[([^\]]+)\]/g, '<span class="gold">$1</span>').replace(/~/g, '&nbsp;');
 
-// El logo se inserta tal cual (archivo SVG original), solo escalado.
-const logoTag = logoPath
-  ? `<img class="logo" src="data:image/svg+xml;base64,${fs.readFileSync(logoPath).toString('base64')}">`
-  : `<div class="logo placeholder">LOGO IZZY<br><small>(pendiente: falta el SVG oficial)</small></div>`;
+// Los logos se insertan tal cual (archivos originales), solo escalados.
+// Se pueden pasar varios separados por comas: aparecen lado a lado.
+const mime = f => (/\.svg$/i.test(f) ? 'image/svg+xml' : /\.jpe?g$/i.test(f) ? 'image/jpeg' : 'image/png');
+const logos = (logoPath || '').split(',').filter(Boolean);
+const logoTag = logos.length
+  ? `<div class="logos">${logos.map(f => `<img class="logo" src="data:${mime(f)};base64,${fs.readFileSync(f).toString('base64')}">`).join('')}</div>`
+  : `<div class="logo placeholder">LOGO IZZY<br><small>(pendiente: falta el logo oficial)</small></div>`;
 
 const css = `
   html,body{margin:0;width:${W}px;height:${H}px;background:transparent;overflow:hidden}
@@ -29,7 +32,8 @@ const css = `
     text-shadow:0 3px 3px rgba(0,0,0,.85),0 8px 26px rgba(0,0,0,.75),0 0 2px rgba(0,0,0,.9)}
   .gold{color:${cfg.colores.dorado};font-size:1.22em}
   .emoji{font-family:'Noto Color Emoji'}
-  .logo{max-width:560px;max-height:300px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+  .logos{display:flex;gap:28px;align-items:center;justify-content:center}
+  .logo{height:330px;width:auto;max-width:560px;border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.55)}
   .placeholder{width:520px;height:220px;border:6px dashed #fff;border-radius:24px;display:flex;
     flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:44px;
     text-align:center;background:rgba(255,255,255,.08)}

@@ -2,8 +2,8 @@
 
 ## Qué necesitas poner
 1. **Video de fondo** → `assets/video/` (cualquier .mp4 o .mov; se usa el primero en orden alfabético).
-2. **Logo oficial IZZY (Brand V1)** → `assets/izzy-logo-master.svg` o `brand/izzy/v1/`. No se modifica: solo se escala.
-3. **Colores del brand kit** → edita `reel/config.json` (`azulMarino` y `dorado`).
+2. **Logos del cierre** → `assets/logos/izzy-escudo.png` y `assets/logos/caicedo-network.png` (ya están). No se modifican: solo se escalan y se muestran lado a lado como tarjetas.
+3. **Colores** → `reel/config.json`: azul #0A1F44 y dorado #B8914A (tomados del logo IZZY).
 
 ## Cómo generar el video
 ```bash

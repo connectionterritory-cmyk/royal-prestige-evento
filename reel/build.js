@@ -18,17 +18,14 @@ const videos = fs.existsSync(videoDir)
   ? fs.readdirSync(videoDir).filter(f => /\.(mp4|mov|m4v|webm|mkv)$/i.test(f)).sort() : [];
 const video = videos.length ? path.join(videoDir, videos[0]) : null;
 
-const logoCandidates = [
-  path.join(ROOT, 'assets/izzy-logo-master.svg'),
-  ...(fs.existsSync(path.join(ROOT, 'brand/izzy/v1'))
-    ? fs.readdirSync(path.join(ROOT, 'brand/izzy/v1')).filter(f => /\.svg$/i.test(f)).map(f => path.join(ROOT, 'brand/izzy/v1', f))
-    : []),
-];
-const logo = logoCandidates.find(f => fs.existsSync(f)) || null;
-const draft = !video || !logo;
+// Logos del cierre, en orden (IZZY primero). Se usan tal cual, sin modificar.
+const logoFiles = ['assets/logos/izzy-escudo.png', 'assets/logos/caicedo-network.png'].map(f => path.join(ROOT, f));
+const logos = logoFiles.filter(f => fs.existsSync(f));
+const logo = logos.length ? logos.join(',') : null;
+const draft = !video || !logo;  // borrador si falta el video o los logos
 
 console.log('Video de fondo :', video ? path.relative(ROOT, video) : 'NO ENCONTRADO (uso fondo de reemplazo)');
-console.log('Logo IZZY      :', logo ? path.relative(ROOT, logo) : 'NO ENCONTRADO (uso recuadro de reemplazo)');
+console.log('Logos         :', logos.length ? logos.map(f => path.relative(ROOT, f)).join(' + ') : 'NO ENCONTRADOS (uso recuadro de reemplazo)');
 
 // --- 1. Dibujar los textos -----------------------------------------------------
 const tmp = path.join(ROOT, 'output/.tmp');

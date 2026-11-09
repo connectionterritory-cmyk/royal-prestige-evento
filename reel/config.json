@@ -1,8 +1,8 @@
 {
-  "_nota": "El símbolo ~ une dos palabras para que no se separen de línea. [ ] marca las cifras en dorado. Edita aquí textos, tiempos y colores. Los colores se deben confirmar con el brand kit IZZY Brand V1.",
+  "_nota": "El símbolo ~ une dos palabras para que no se separen de línea. [ ] marca las cifras en dorado. Edita aquí textos, tiempos y colores. Colores tomados del logo IZZY: azul #0A1F44 y dorado #B8914A.",
   "colores": {
     "azulMarino": "#0A1F44",
-    "dorado": "#C9A227",
+    "dorado": "#B8914A",
     "opacidadCapa": 0.5
   },
   "duracionTotal": 25,
