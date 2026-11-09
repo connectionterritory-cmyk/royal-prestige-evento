@@ -1,0 +1,18 @@
+{
+  "_nota": "El símbolo ~ une dos palabras para que no se separen de línea. [ ] marca las cifras en dorado. Edita aquí textos, tiempos y colores. Los colores se deben confirmar con el brand kit IZZY Brand V1.",
+  "colores": {
+    "azulMarino": "#0A1F44",
+    "dorado": "#C9A227",
+    "opacidadCapa": 0.5
+  },
+  "duracionTotal": 25,
+  "frases": [
+    { "texto": "[$250,000] EN UNA CUENTA DE~RETIRO", "inicio": 0.0, "fin": 3.5 },
+    { "texto": "PODRÍAN PAGARTE [$10,000] AL~AÑO SEGÚN LA REGLA DEL~4%", "inicio": 3.5, "fin": 7.5 },
+    { "texto": "PERO [$250,000] EN UNA~ANUALIDAD", "inicio": 7.5, "fin": 11.0 },
+    { "texto": "PODRÍAN PAGARTE [$26,019] AL~AÑO", "inicio": 11.0, "fin": 14.5 },
+    { "texto": "¡DE POR~VIDA!", "inicio": 14.5, "fin": 18.0 },
+    { "texto": "LEE LA DESCRIPCIÓN ⬇️", "inicio": 18.0, "fin": 25.0, "logo": true }
+  ],
+  "avisoLegal": "Ilustración basada en un producto específico. Los resultados dependen de la edad, el producto y la aseguradora. No es una promesa de rendimiento."
+}
